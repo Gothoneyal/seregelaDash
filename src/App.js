@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminDashboard from './views/AdminDashboard/AdminDashboard';
+import ProductForm from './views/ProductForm/ProductForm';
+import ProductListContainer from './views/ProductList/ProductListContainer';
+import Sidebar from './views/menu/Sidebar';
+import './styles/global.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app-container">
+        <Sidebar /> {/* Left-hand side menu */}
+        <div className="content">
+          <Routes>
+            <Route path="/dashboard" element={<AdminDashboard />} />
+            <Route path="/add-product" element={<ProductForm />} />
+            <Route path="/product-list" element={<ProductListContainer />} />
+            <Route path="/update-product/:id" element={<ProductForm />} />
+            <Route path="*" element={<AdminDashboard />} /> {/* Default route */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,28 @@
+.left-hand-menu {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+  }
+  
+  .left-hand-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .left-hand-menu li {
+    margin: 15px 0;
+  }
+  
+  .left-hand-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .left-hand-menu a:hover {
+    text-decoration: underline;
+  }
+  
