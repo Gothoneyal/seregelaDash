@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../../styles/LeftHandMenu.css'
 
 const Sdebar = () => {
     return (
         <div className="left-hand-menu">
+            <h1>Admin Dashboard</h1>
             <nav>
                 <ul>
                     <li>

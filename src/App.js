@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminDashboard from './views/AdminDashboard/AdminDashboard';
 import ProductForm from './views/ProductForm/ProductForm';
 import ProductListContainer from './views/ProductList/ProductListContainer';
-import Sidebar from './views/menu/Sidebar';
 import './styles/global.css';
+import Sidebar from './views/menu/Sidebar'
 
 function App() {
   return (
     <Router>
       <div className="app-container">
-        <Sidebar /> {/* Left-hand side menu */}
+        <Sidebar />
         <div className="content">
           <Routes>
             <Route path="/dashboard" element={<AdminDashboard />} />

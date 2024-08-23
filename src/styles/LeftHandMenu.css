@@ -1,28 +1,39 @@
+/* LeftHandMenu.css */
 .left-hand-menu {
     width: 250px;
-    background-color: #343a40;
-    color: white;
+    height: auto;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     padding: 20px;
-    position: fixed;
-    height: 100%;
-  }
-  
-  .left-hand-menu ul {
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-hand-menu h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.left-hand-menu nav ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .left-hand-menu li {
+}
+
+.left-hand-menu nav ul li {
     margin: 15px 0;
-  }
-  
-  .left-hand-menu a {
-    color: white;
+}
+
+.left-hand-menu nav ul li a {
+    color: #ecf0f1;
     text-decoration: none;
+    font-size: 18px;
     display: block;
-  }
-  
-  .left-hand-menu a:hover {
-    text-decoration: underline;
-  }
-  
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.left-hand-menu nav ul li a:hover,
+.left-hand-menu nav ul li a.active {
+    background-color: #34495e;
+}
