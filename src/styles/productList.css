@@ -31,4 +31,19 @@
   .product-card button {
     margin-right: 5px;
   }
+  .product-list-horizontal {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+  }
+  
+  .product-card {
+    min-width: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
   

@@ -1,28 +1,26 @@
-import { useEffect, useState } from 'react';
-import { getProducts } from '../../models/productModel';
+import React from 'react';
 import ProductForm from '../ProductForm/ProductForm';
 import ProductList from '../ProductList/ProductList';
-import '../../styles/adminDashboard.css'
+import '../../styles/adminDashboard.css';
 
 const AdminDashboard = () => {
-  const [products, setProducts] = useState([]);
+  const handleProductUpdate = (updatedProduct) => {
+    // Implement your update logic here
+    console.log('Update product:', updatedProduct);
+  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const products = await getProducts();
-      setProducts(products);
-    };
-    fetchData();
-  }, []);
+  const handleProductDelete = (id) => {
+    // Implement your delete logic here
+    console.log('Delete product with id:', id);
+  };
 
   return (
     <div className="admin-dashboard">
       <div className="dashboard-content">
-        <ProductForm onProductAdded={(newProduct) => setProducts([...products, newProduct])} />
+        <ProductForm />
         <ProductList
-          products={products}
-          onProductUpdated={(updatedProduct) => setProducts(products.map(p => p.id === updatedProduct.id ? updatedProduct : p))}
-          onProductDeleted={(id) => setProducts(products.filter(p => p.id !== id))}
+          onProductUpdated={handleProductUpdate}
+          onProductDeleted={handleProductDelete}
         />
       </div>
     </div>

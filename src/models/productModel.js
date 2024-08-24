@@ -22,8 +22,12 @@ export const addProduct = async (product, imageFile) => {
 };
 
 export const getProducts = async () => {
+  const products = [];
   const snapshot = await db.collection('products').get();
-  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  snapshot.forEach((doc) => {
+    products.push({ id: doc.id, ...doc.data() });
+  });
+  return products;
 };
 
 export const updateProduct = async (id, updatedData) => {
